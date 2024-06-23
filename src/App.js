@@ -9,8 +9,6 @@ import {
 
 const apikey = process.env.REACT_APP_API_KEY;
 
-
-
 export default class App extends Component {
   pageSize = 6
   country="in"
