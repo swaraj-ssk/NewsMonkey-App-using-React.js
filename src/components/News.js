@@ -73,7 +73,7 @@ export class News extends Component {
                 <div className='row '>
                     {!this.state.loading && this.state.article?.map((element) => {
                         return <div className='col-md-4 d-flex justify-content-center' key={element.url + element.title}>
-                            <NewsItem title={element.title ? element.title : ""} desc={element.description ? element.description : ""} imgUrl={element.urlToImage ? element.urlToImage : "https://media.istockphoto.com/id/187925868/vector/newspaper-cover-page.jpg?s=612x612&w=0&k=20&c=SantJnFi_0dCOD_HUXgRSJxagvgL7Wp_F_e-rFSUV_E="} url={element.url} />
+                            <NewsItem title={element.title ? element.title : ""} desc={element.description ? element.description : ""} imgUrl={element.urlToImage ? element.urlToImage : "https://media.istockphoto.com/id/187925868/vector/newspaper-cover-page.jpg?s=612x612&w=0&k=20&c=SantJnFi_0dCOD_HUXgRSJxagvgL7Wp_F_e-rFSUV_E="} url={element.url} publishedAt={element.publishedAt} author={element.author} source={element.source.name}/>
                         </div>
                     })}
                 </div>
