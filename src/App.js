@@ -11,7 +11,7 @@ import LoadingBar from 'react-top-loading-bar'
 const apikey = process.env.REACT_APP_API_KEY;
 
 const App = () => {
-  const pageSize = 6
+  const pageSize = 15
   const country = "in"
 
   const [progress, setProgress] = useState(0);
