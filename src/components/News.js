@@ -10,7 +10,8 @@ export class News extends Component {
     static defaulProps = {
         country: 'in',
         pageSize: 9,
-        category: 'general'
+        category: 'general',
+        setProgress :0
     }
 
     static propTypes = {
@@ -32,11 +33,15 @@ export class News extends Component {
     }
 
     async updateNews(page) {
+        this.props.setProgress(10)
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.API_KEY}&page=${page}&pageSize=${this.props.pageSize}`;
         this.setState({ loading: true })
         let data = await fetch(url);
+        this.props.setProgress(40)
         let parsedData = await data.json();
+        this.props.setProgress(70)
         this.setState({ article: parsedData.articles, totalResults: parsedData.totalResults, loading: false });
+        this.props.setProgress(100)
     }
 
     async componentDidMount() {
